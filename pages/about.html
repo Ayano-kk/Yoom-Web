@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 沄荣科技官网</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+
+<body>
+    <!-- 导航栏占位符 -->
+    <div id="header-placeholder"></div>
+
+    <!-- 关于我们页面内容 -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>关于我们</h2>
+            </div>
+            <div class="about-content">
+                <p>致力于提供高可靠、高性价比的 AI 智能体落地解决方案，帮助客户搭建 AI 场景产品和平台。通过不断融合新兴技术对模型平台进行迭代，提供用户友好的操作界面，可靠的 LLM
+                    工程化系统建设，高效的企业私有化数据库以及个性化服务，帮助客户轻松应对各种需求，提升生产效率和降低企业运营成本。</p>
+                <p>沄荣科技的宗旨是：实事求是，合作共赢，做对客户有价值的事情。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队成员 -->
+    <section class="team-section">
+        <div class="container">
+            <div class="team-content">
+                <div class="team-info">
+                    <h3>我们的团队成员</h3>
+                    <h4>AI团队</h4>
+                    <p>源自浙大、交大的985工程，极具创新和勇于挑战的团队。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系横幅 -->
+    <section class="contact-banner">
+        <div class="banner-content">
+            <h2>还在探索 AI 如何落地企业场景吗？</h2>
+            <h3>联系我们吧</h3>
+            <p>马上联系，免费获取AI场景应用的可行方案！</p>
+            <button class="contact-btn">立即联系</button>
+        </div>
+    </section>
+
+    <!-- 渠道合作 -->
+    <section class="cooperation-section">
+        <div class="container">
+            <div class="cooperation-content">
+                <h2>渠道合作</h2>
+                <p class="cooperation-desc">我们正在寻找志同道合的合作伙伴，共享 AI 时代的发展红利，为千行百业的数字化转型提供卓越的解决方案。</p>
+                <a href="https://ai-form.xiaohuodui.cn/s/Q3pdh3nT" class="cooperation-btn" target="_blank">立即申请合作</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业微信二维码弹窗 -->
+    <div id="wechat-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img src="../assets/contact/wechat_code.jpg" alt="企业微信二维码" class="modal-qr">
+                <p class="modal-text">扫码添加企业微信</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚占位符 -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/components-loader.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        // 获取弹窗元素
+        const modal = document.getElementById('wechat-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const contactBtn = document.querySelector('.contact-btn');
+        
+        // 打开弹窗
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function() {
+                modal.style.display = 'block';
+            });
+        }
+        
+        // 关闭弹窗
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        
+        // 点击弹窗外部关闭
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,918 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+        Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* 容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #3758F9;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #409eff;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #3758F9;
+    border: 1px solid #3758F9;
+}
+
+.btn-secondary:hover {
+    background-color: #ecf5ff;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* 导航栏 */
+.header {
+    background-color: #3758f9;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-logo h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-logo img {
+    height: 60px;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white;
+    opacity: 0.9;
+}
+
+.nav-buttons {
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-buttons .btn-primary {
+    background-color: white;
+    color: #3758f9;
+}
+
+.nav-buttons .btn-primary:hover {
+    background-color: #f0f0f0;
+    color: #3758f9;
+}
+
+.login-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.login-link:hover {
+    opacity: 0.8;
+}
+
+.login-link.active {
+    color: white;
+    font-weight: 500;
+}
+
+/* 下拉菜单样式 */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* 下拉箭头 */
+.dropdown-toggle::after {
+    content: '\25BC';
+    font-size: 10px;
+    margin-left: 6px;
+    color: white;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 12px 0;
+    min-width: 280px;
+    z-index: 1001;
+    list-style: none;
+    border-top: 4px solid transparent;
+}
+
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 0.3s ease;
+}
+
+.nav-item.dropdown .dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    will-change: opacity;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #303133;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+.dropdown-item:hover {
+    background-color: #ecf5ff;
+    color: #409eff;
+}
+
+/* 区块标题 */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #303133;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #606266;
+}
+
+/* 页面标题 (Shared across multiple pages) */
+.page-header {
+    background: linear-gradient(135deg, #0066ff 0%, #0044cc 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* 常见问题 (Shared between Index and FAQ page) */
+.faq {
+    padding: 100px 0;
+    background-color: #f5f7fa;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 20px 30px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.faq-question:hover {
+    background-color: #f5f7fa;
+}
+
+.faq-answer {
+    padding: 20px 30px;
+    font-size: 18px;
+    color: #606266;
+    background-color: #fafafa;
+}
+
+/* 联系我们 (Shared between Index and Contact page) */
+.contact {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.contact-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #303133;
+}
+
+.contact-item p {
+    color: #606266;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* 行动召唤 (Shared) */
+.cta {
+    padding: 80px 0;
+    background-color: #f5f7fa;
+    text-align: center;
+}
+
+.cta-content h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #303133;
+}
+
+.cta-content p {
+    font-size: 18px;
+    color: #606266;
+    margin-bottom: 30px;
+}
+
+/* 页脚 */
+.footer {
+    background-color: #303133;
+    color: #909399;
+    padding: 60px 0 20px;
+}
+
+.footer-links {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #404244;
+    margin-bottom: 30px;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 15px 25px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #909399;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #909399;
+    line-height: 1.6;
+}
+
+.footer-contact {
+    text-align: center;
+}
+
+.footer-contact h4 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #909399;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.footer-blog {
+    text-align: left;
+}
+
+.footer-blog h4 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-blog-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-blog-item:hover {
+    opacity: 0.8;
+}
+
+.footer-blog-item img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.footer-blog-item span {
+    color: #909399;
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.footer-blog-item:hover span {
+    color: #409eff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #404244;
+    font-size: 12px;
+}
+
+.footer-bottom a.icp-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-bottom a.icp-link:hover {
+    text-decoration: underline;
+}
+
+/* form-group (Used in Contact and Login) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #303133;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #606266;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #409eff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 企业微信二维码弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #999;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.modal-qr {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* 智能体对话框样式 */
+.agent-dialog {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 400px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    max-height: 600px;
+}
+
+.agent-dialog.show {
+    display: flex;
+}
+
+/* 对话框头部 */
+.agent-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background-color: #f5f7fa;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #e4e7ed;
+}
+
+.agent-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.agent-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.agent-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.agent-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #303133;
+}
+
+.agent-brand {
+    font-size: 12px;
+    color: #909399;
+}
+
+.agent-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #909399;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.agent-close-btn:hover {
+    background-color: #ecf5ff;
+    color: #409eff;
+}
+
+/* 对话框主体 */
+.agent-dialog-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.agent-greeting {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.agent-greeting-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 4px;
+}
+
+.agent-greeting-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.agent-greeting-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #303133;
+}
+
+.agent-greeting-subtext {
+    font-size: 12px;
+    color: #606266;
+}
+
+.agent-greeting-desc {
+    font-size: 12px;
+    color: #909399;
+    margin-top: 4px;
+}
+
+.agent-quick-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.agent-quick-question {
+    background-color: #f5f7fa;
+    border: 1px solid #e4e7ed;
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #606266;
+    transition: all 0.3s ease;
+}
+
+.agent-quick-question:hover {
+    background-color: #ecf5ff;
+    border-color: #c6e2ff;
+    color: #409eff;
+}
+
+/* 对话框底部 */
+.agent-dialog-footer {
+    padding: 20px;
+    border-top: 1px solid #e4e7ed;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.agent-input-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.agent-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #dcdfe6;
+    border-radius: 24px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.agent-input:focus {
+    outline: none;
+    border-color: #409eff;
+}
+
+.agent-send-btn {
+    background-color: #409eff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.agent-send-btn:hover {
+    background-color: #66b1ff;
+}
+
+.agent-version {
+    font-size: 12px;
+    color: #909399;
+    text-align: center;
+}
+
+/* 对话框切换按钮 */
+.agent-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3758f9;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.agent-toggle-btn:hover {
+    background-color: #409eff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.agent-toggle-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 响应式设计 (Common Mobile Styles) */
+@media (max-width: 768px) {
+    .nav {
+        height: 56px;
+    }
+
+    .nav-menu {
+        display: none;
+        background-color: #3758f9 !important;
+    }
+
+    .nav-item.dropdown .dropdown-toggle::after {
+        transition: transform 0.2s ease;
+    }
+
+    .nav-item.dropdown.open .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    .nav-logo img {
+        height: 28px;
+        width: auto;
+        max-width: 160px;
+        object-fit: contain;
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        display: none;
+        position: static;
+        padding: 8px 0;
+        min-width: 100%;
+    }
+
+    .nav-item.dropdown.open .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item.dropdown .dropdown-menu,
+    .nav-item.dropdown.open .dropdown-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:link,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:visited,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:hover,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:focus,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff;
+        opacity: 1 !important;
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item:hover,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:focus,
+    .nav-item.dropdown .dropdown-menu .dropdown-item:active {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-logo,
+    .footer-contact,
+    .footer-blog {
+        text-align: center;
+    }
+
+    .footer-blog-list {
+        align-items: center;
+    }
+
+    .footer-blog-item {
+        justify-content: center;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-info {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

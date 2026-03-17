@@ -1,0 +1,101 @@
+/* 登录页面样式 */
+.login {
+    padding: 80px 0;
+    background-color: #f5f7fa;
+}
+
+.login-card {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-logo h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #303133;
+    margin-bottom: 8px;
+}
+
+.login-logo p {
+    font-size: 14px;
+    color: #606266;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3758f9;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #606266;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #3758f9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #409eff;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.free-trial {
+    color: #3758f9;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.free-trial:hover {
+    color: #409eff;
+}

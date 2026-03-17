@@ -1,0 +1,25 @@
+/* 功能详情页面 */
+.features-detail {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.feature-detail-item {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+}
+
+.feature-detail-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #303133;
+}
+
+.feature-detail-content p {
+    font-size: 16px;
+    color: #606266;
+    line-height: 1.8;
+}

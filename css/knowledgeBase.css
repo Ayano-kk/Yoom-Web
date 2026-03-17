@@ -1,0 +1,184 @@
+/* AI知识库页面样式 */
+.knowledgeBase {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+/* 英雄区域样式 */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 80px;
+    padding: 40px 0;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero-content p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* 按钮区域样式 */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color: #3758f9;
+    color: white;
+    border: none;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #409eff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(55, 88, 249, 0.3);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: white;
+    color: #3758f9;
+    border: 1px solid #3758f9;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: #f0f4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(55, 88, 249, 0.15);
+}
+
+/* 图片区域样式 */
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.value-propositions,
+.application-scenarios,
+.why-choose {
+    margin-bottom: 80px;
+}
+
+.value-grid,
+.scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 确保标题和描述居中 */
+.value-propositions h3,
+.value-propositions p,
+.application-scenarios h3 {
+    text-align: center;
+}
+
+.value-item,
+.scenario-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover,
+.scenario-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.value-item h4,
+.scenario-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.value-item p,
+.scenario-item p {
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.comparison {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.comparison-column h5 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.comparison-column ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.comparison-column li {
+    padding: 12px 0;
+    padding-left: 24px;
+    position: relative;
+    color: #666;
+    line-height: 1.6;
+}
+
+.comparison-column li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #3758f9;
+    font-weight: bold;
+}

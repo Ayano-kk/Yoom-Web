@@ -1,0 +1,32 @@
+<!-- 导航栏组件 - 使用 {{BASE_PATH}} 作为路径占位符 -->
+<header class="header">
+    <nav class="nav container">
+        <div class="nav-logo"><a href="{{BASE_PATH}}/index.html"><img src="{{BASE_PATH}}/assets/logo/logo-yunbloom-sizechanged.png"
+                    alt="YunBloom Logo"></a></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="{{BASE_PATH}}/index.html" class="nav-link">首页</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle">解决方案</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{BASE_PATH}}/pages/knowledgeBase.html" class="dropdown-item">AI知识库 - 企业的智能知识官</a></li>
+                    <li><a href="{{BASE_PATH}}/pages/chat2db.html" class="dropdown-item">Chat2DB - 数据表AI智能体</a></li>
+                    <li><a href="{{BASE_PATH}}/pages/private.html" class="dropdown-item">私有化部署</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle">帮助中心</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{BASE_PATH}}/pages/faq.html" class="dropdown-item">常见问题</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="{{BASE_PATH}}/pages/pricing.html" class="nav-link">价格</a></li>
+            <li class="nav-item"><a href="{{BASE_PATH}}/pages/about.html" class="nav-link">关于我们</a></li>
+            <li class="nav-item"><a href="{{BASE_PATH}}/pages/blog.html" class="nav-link">博客</a></li>
+            <li class="nav-item"><a href="{{BASE_PATH}}/pages/cases.html" class="nav-link">案例</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="https://ai.yunbloom.cn/" class="nav-link login-link">登录</a>
+            <a href="https://ai-form.xiaohuodui.cn/s/Q3pdh3nT" class="btn btn-primary" target="_blank">马上试用</a>
+        </div>
+    </nav>
+</header>

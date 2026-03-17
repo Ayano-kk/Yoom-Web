@@ -1,0 +1,193 @@
+{
+  "categories": [
+    "全部",
+    "制造业",
+    "零售电商",
+    "企业服务",
+    "教育服务"
+  ],
+  "cases": [
+    {
+      "id": "c01",
+      "title": "某留学咨询机构智能顾问系统",
+      "subtitle": "AI知识库赋能留学顾问，咨询转化率提升45%",
+      "industry": "教育服务",
+      "tags": [
+        "智能问答",
+        "转化提升"
+      ],
+      "metrics": [
+        {
+          "value": "45%",
+          "label": "转化率"
+        },
+        {
+          "value": "60%",
+          "label": "响应提效"
+        },
+        {
+          "value": "3倍",
+          "label": "服务容量"
+        }
+      ],
+      "logoText": "教",
+      "coverStyle": "linear-gradient(135deg, #0066ff 0%, #0044cc 100%)"
+    },
+    {
+      "id": "c02",
+      "title": "某母婴品牌智能导购助手",
+      "subtitle": "AI导购7x24在线，客单价提升35%",
+      "industry": "零售电商",
+      "tags": [
+        "智能导购",
+        "销售提升"
+      ],
+      "metrics": [
+        {
+          "value": "35%",
+          "label": "客单价"
+        },
+        {
+          "value": "90%",
+          "label": "响应率"
+        },
+        {
+          "value": "50%",
+          "label": "退货降"
+        }
+      ],
+      "logoText": "婴",
+      "coverStyle": "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)"
+    },
+    {
+      "id": "c03",
+      "title": "某服装电商销售数据分析平台",
+      "subtitle": "AI自动生成经营分析，决策效率提升5倍",
+      "industry": "零售电商",
+      "tags": [
+        "库存优化",
+        "智能决策"
+      ],
+      "metrics": [
+        {
+          "value": "5倍",
+          "label": "分析效率"
+        },
+        {
+          "value": "20%",
+          "label": "库存降"
+        },
+        {
+          "value": "¥80万",
+          "label": "季度增收"
+        }
+      ],
+      "logoText": "商",
+      "coverStyle": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)"
+    },
+    {
+      "id": "c04",
+      "title": "某科技公司财务流程智能助手",
+      "subtitle": "AI自动处理80%日常财务咨询，月结提速3天",
+      "industry": "企业服务",
+      "tags": [
+        "流程自动化",
+        "降本增效"
+      ],
+      "metrics": [
+        {
+          "value": "80%",
+          "label": "自动咨询"
+        },
+        {
+          "value": "3天",
+          "label": "月结提速"
+        },
+        {
+          "value": "60%",
+          "label": "驳回降"
+        }
+      ],
+      "logoText": "财",
+      "coverStyle": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    },
+    {
+      "id": "c05",
+      "title": "某汽车零部件厂设备维护知识库",
+      "subtitle": "AI辅助故障诊断，设备停机时间减少40%",
+      "industry": "制造业",
+      "tags": [
+        "故障诊断",
+        "设备维护"
+      ],
+      "metrics": [
+        {
+          "value": "40%",
+          "label": "停机减"
+        },
+        {
+          "value": "65%",
+          "label": "修复率"
+        },
+        {
+          "value": "¥300万",
+          "label": "减损"
+        }
+      ],
+      "logoText": "汽",
+      "coverStyle": "linear-gradient(135deg, #434343 0%, #000000 100%)"
+    },
+    {
+      "id": "c06",
+      "title": "某电子厂质量检验知识系统",
+      "subtitle": "AI标准化质检知识，不良率下降25%",
+      "industry": "制造业",
+      "tags": [
+        "质量管理",
+        "标准统一"
+      ],
+      "metrics": [
+        {
+          "value": "25%",
+          "label": "不良降"
+        },
+        {
+          "value": "70%",
+          "label": "培训提速"
+        },
+        {
+          "value": "98%",
+          "label": "一致性"
+        }
+      ],
+      "logoText": "电",
+      "coverStyle": "linear-gradient(135deg, #0ba360 0%, #3cba92 100%)"
+    },
+    {
+      "id": "c07",
+      "title": "某机械加工厂工艺知识库",
+      "subtitle": "AI沉淀老师傅经验，新人产能达标提速50%",
+      "industry": "制造业",
+      "tags": [
+        "工艺管理",
+        "知识传承"
+      ],
+      "metrics": [
+        {
+          "value": "50%",
+          "label": "达标提速"
+        },
+        {
+          "value": "30%",
+          "label": "问题减"
+        },
+        {
+          "value": "100%",
+          "label": "数字化"
+        }
+      ],
+      "logoText": "机",
+      "coverStyle": "linear-gradient(135deg, #232526 0%, #414345 100%)"
+    }
+  ]
+}
