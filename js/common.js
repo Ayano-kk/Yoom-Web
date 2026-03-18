@@ -291,12 +291,17 @@ window.addEventListener('resize', handleResize);
 // 智能体JavaScript嵌入代码
 window.addEventListener('DOMContentLoaded', () => {
     try {
-        // 配置智能体参数
         window.tip_jimo_color = '#fff';
-        window.tip_jimo_bg = '#175cba'; // 使用与顶部导航栏相同的颜色
-        window.jimo_iframe_src = 'https://ai.yunbloom.cn/chat/aYubZNo5itDFIe8M';
-        
-        // 创建按钮容器
+        window.tip_jimo_bg = '#4C83F3';
+        window.jimo_iframe_src = 'https://jimoai.xiaohuodui.cn/chat/hamNgarPYv5g9ABR';
+
+        if (!document.querySelector('script[src="https://jimoai.xiaohuodui.cn/js/iframe1.js"]')) {
+            var aiScript = document.createElement('script');
+            aiScript.src = 'https://jimoai.xiaohuodui.cn/js/iframe1.js';
+            aiScript.async = true;
+            document.body.appendChild(aiScript);
+        }
+
         var buttonContainer = document.createElement('div');
         buttonContainer.style.cssText = `
             position: fixed;
@@ -308,132 +313,7 @@ window.addEventListener('DOMContentLoaded', () => {
             gap: 12px;
             z-index: 9998;
         `;
-        
-        // 创建智能体对话框
-        var agentDialog = document.createElement('div');
-        agentDialog.style.cssText = `
-            position: fixed;
-            bottom: 80px;
-            right: 30px;
-            width: 420px;
-            height: 600px;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            z-index: 9999;
-            background-color: white;
-            overflow: hidden;
-            display: none;
-            min-width: 250px;
-            min-height: 300px;
-        `;
-        
-        // 创建顶部栏
-        var dialogHeader = document.createElement('div');
-        dialogHeader.style.cssText = `
-            height: 50px;
-            background-color: #175cba;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px;
-            font-size: 16px;
-            font-weight: 500;
-            position: relative;
-            z-index: 10;
-        `;
-        dialogHeader.innerHTML = `
-            <span>智能助手</span>
-            <button style="background: none; border: none; color: white; cursor: pointer; font-size: 18px;">&times;</button>
-        `;
-        
-        // 创建内容区域
-        var dialogContent = document.createElement('div');
-        dialogContent.style.cssText = `
-            height: calc(100% - 50px);
-            overflow: hidden;
-            position: relative;
-        `;
-        
-        // 创建iframe
-        var iframe = document.createElement('iframe');
-        iframe.src = window.jimo_iframe_src;
-        iframe.style.cssText = `
-            width: 100%;
-            height: 100%;
-            border: none;
-        `;
-        
-        function applyAgentLayout() {
-            const isMobile = window.innerWidth <= 768;
-            const margin = isMobile ? 12 : 30;
-            const bottomOffset = isMobile ? 16 : 80;
-            const maxWidth = isMobile
-                ? Math.min(360, window.innerWidth - margin * 2)
-                : Math.min(520, Math.round(window.innerWidth * 0.32));
-            const minWidth = isMobile ? 260 : 320;
-            const width = Math.max(minWidth, Math.min(maxWidth, window.innerWidth - margin * 2));
-            const maxHeight = isMobile
-                ? Math.min(520, Math.round(window.innerHeight * 0.72))
-                : Math.min(720, Math.round(window.innerHeight * 0.7));
-            const minHeight = isMobile ? 360 : 420;
-            const height = Math.max(minHeight, Math.min(maxHeight, window.innerHeight - bottomOffset - 24));
 
-            agentDialog.style.width = `${width}px`;
-            agentDialog.style.height = `${height}px`;
-            agentDialog.style.right = `${margin}px`;
-            agentDialog.style.bottom = `${bottomOffset}px`;
-
-            if (!agentDialog.dataset.defaultVisibilityApplied) {
-                agentDialog.style.display = isMobile ? 'none' : 'block';
-                agentDialog.dataset.defaultVisibilityApplied = '1';
-            }
-
-            if (isMobile) {
-                buttonContainer.style.right = `${margin}px`;
-                buttonContainer.style.bottom = `${margin}px`;
-            } else {
-                buttonContainer.style.right = '30px';
-                buttonContainer.style.bottom = '30px';
-            }
-        }
-        
-        // 组合元素
-        dialogContent.appendChild(iframe);
-        agentDialog.appendChild(dialogHeader);
-        agentDialog.appendChild(dialogContent);
-        
-        // 创建AI助手按钮
-        var agentButton = document.createElement('button');
-        agentButton.innerHTML = 'AI助手';
-        agentButton.style.cssText = `
-            width: 130px;
-            height: 45px;
-            background-color: white;
-            color: #333;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-align: center;
-            padding: 0 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-        agentButton.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.12)';
-        });
-        agentButton.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
-        });
-        
-        // 创建联系我们按钮
         var contactButton = document.createElement('button');
         contactButton.innerHTML = '联系我们';
         contactButton.style.cssText = `
@@ -462,12 +342,8 @@ window.addEventListener('DOMContentLoaded', () => {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
         });
-        // 暂时移除点击事件，后续将添加企微二维码功能
-        contactButton.addEventListener('click', function() {
-            // 后续将添加企微二维码显示功能
-        });
-        
-        // 创建预约演示按钮
+        contactButton.addEventListener('click', function() {});
+
         var demoButton = document.createElement('button');
         demoButton.innerHTML = '预约演示';
         demoButton.style.cssText = `
@@ -499,8 +375,7 @@ window.addEventListener('DOMContentLoaded', () => {
         demoButton.addEventListener('click', function() {
             window.open('https://ai-form.xiaohuodui.cn/s/Q3pdh3nT', '_blank');
         });
-        
-        // 创建返回置顶按钮
+
         var backToTopButton = document.createElement('button');
         backToTopButton.innerHTML = '↑';
         backToTopButton.style.cssText = `
@@ -533,34 +408,13 @@ window.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth'
             });
         });
-        
-        // 添加按钮到容器
+
         buttonContainer.appendChild(contactButton);
         buttonContainer.appendChild(demoButton);
-        buttonContainer.appendChild(agentButton);
         buttonContainer.appendChild(backToTopButton);
-        
-        // 添加到页面
+
         document.body.appendChild(buttonContainer);
-        document.body.appendChild(agentDialog);
-        
-        applyAgentLayout();
-        window.addEventListener('resize', applyAgentLayout);
-        
-        // 点击按钮显示/隐藏对话框
-        agentButton.addEventListener('click', function () {
-            agentDialog.style.display = agentDialog.style.display === 'block' ? 'none' : 'block';
-        });
-        
-        // 点击关闭按钮
-        dialogHeader.querySelector('button').addEventListener('click', function () {
-            agentDialog.style.display = 'none';
-        });
-        
-        // 添加可调整大小功能
-        makeResizable(agentDialog, dialogContent, iframe);
-        
-        // 滚动显示/隐藏返回置顶按钮
+
         window.addEventListener('scroll', function() {
             if (window.pageYOffset > 300) {
                 backToTopButton.style.display = 'block';
@@ -568,8 +422,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 backToTopButton.style.display = 'none';
             }
         });
-        
-        console.log('智能体对话框已成功添加到页面');
+
+        console.log('智能体嵌入脚本已加载');
     } catch (error) {
         console.error('智能体加载失败:', error);
     }
